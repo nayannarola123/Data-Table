@@ -24,14 +24,6 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              to="/view-data" 
-              className="text-gray-200 hover:text-white hover:underline transition duration-300"
-            >
-              View Data
-            </Link>
-          </li>
-          <li>
-            <Link 
               to="/datatable" 
               className="text-gray-200 hover:text-white hover:underline transition duration-300"
             >

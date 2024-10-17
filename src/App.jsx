@@ -6,7 +6,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Form from './Component/Form/Form';
 import Home from './Component/Home/Home';
-import ViewData from './Component/ViewData/ViewData';
 import getdata from './Component/js/main';
 import Header from './Component/Header/Header';
 import Update from './Component/Update/Update';
@@ -42,7 +41,7 @@ function App() {
     const newFormInput = { ...FormInput, id: uuidv4() };
     setStorage([...Storage, newFormInput]);
 
-    navigate('/view-data');
+    navigate('/datatable');
 
     setFormInput({
       name: '',
@@ -64,7 +63,7 @@ function App() {
     );
 
     setStorage(updatedStorage);
-    navigate('/view-data');
+    navigate('/datatable');
   }
 
   // Updata end 
@@ -79,7 +78,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/student" element={<Form handleForm={handleForm} handleSubmit={handleSubmit} />} />
-        <Route path="/view-data" element={<ViewData Storage={Storage} handleEdit={handleEdit} setStorage={setStorage} />} />
         <Route path="/update" element={<Update editData={editData} handleUpdate={handleUpdate} />} />
         <Route path="/datatable" element={<DataTable Storage={Storage} handleEdit={handleEdit} setStorage={setStorage} />} />
         <Route path="*" element={<h1 className="text-center p-3">404 page not found</h1>} />
